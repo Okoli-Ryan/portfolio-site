@@ -1,0 +1,17 @@
+.button{
+    /* padding: 0 1.4rem; */
+    border-radius: .5rem;
+    background-color: #EC6B53;
+    z-index: 2;
+    position: absolute;
+    bottom: 8%;
+    padding: 0
+}
+
+.button p{
+    font-family: 'Salara', sans-serif;
+    font-size: 1.3rem;
+    color: white;
+    padding: 0 1rem;
+    margin: 1.2rem 0
+}
