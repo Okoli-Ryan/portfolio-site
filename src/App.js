@@ -1,6 +1,6 @@
 import React from 'react';
 // import { motion } from 'framer-motion';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 
@@ -11,7 +11,7 @@ import Services from './routes/Services';
 
 function App() {
 	return (
-		<>
+		<BrowserRouter>
 			<Header />
 			
 				<Switch>
@@ -20,7 +20,7 @@ function App() {
 					<Route exact path="/Projects" component={Projects} />
 					<Route exact path="/Services" component={Services} />
 				</Switch>
-		</>
+		</BrowserRouter>
 	);
 }
 
