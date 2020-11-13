@@ -1,0 +1,80 @@
+.hero-image {
+	width: 100%;
+
+	/* background-position-y: 85%; */
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hero-image::before {
+	content: '';
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.4;
+	position: absolute;
+	background: url('../images/background\ 3.jpg') no-repeat;
+	background-size: cover;
+}
+
+.hero-container * {
+	text-align: center;
+	position: relative;
+	top: -3rem;
+	height: max-content;
+}
+
+.hero-container h1 {
+	font-size: 10vw;
+	/* font-family: 'Montserrat', sans-serif; */
+	font-family: 'league Spartan', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+	font-weight: bolder;
+	/* text-shadow: .5px .5px 4px #30353E; */
+	color: #2c313a;
+	margin-bottom: 0;
+}
+
+.hero-container h3 {
+	font-size: 6vw;
+	font-family: 'Sarala', sans-serif;
+	color: #2c313a;
+	/* text-shadow: .5px .5px 4px black; */
+	margin-top: -5px;
+}
+
+.see-more {
+	margin-top: 10%;
+	color: white;
+	padding: 1rem 1.3rem;
+	border-radius: 0.5rem;
+	font-size: 1.2rem;
+	font-family: 'Sarala', sans-serif;
+    background-color: #4f99b2;
+    z-index: 2;
+}
+
+@media only screen and (min-width: 400px) {
+	.hero-container h1 {
+		font-size: 3rem;
+	}
+	.hero-container h3 {
+		font-size: 1.4rem;
+	}
+}
+
+@media only screen and (min-width: 920px) {
+	.hero-image::before {
+		background-position-y: 85%;
+	}
+}
+
+@media only screen and (max-width: 880px) {
+	.hero-image::before {
+		background-position-x: 46%;
+	}
+}

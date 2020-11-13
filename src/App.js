@@ -11,20 +11,16 @@ import Services from './routes/Services';
 
 function App() {
 	return (
-		<div className="home-container">
+		<>
 			<Header />
-			<div className="container">
+			
 				<Switch>
 					<Route exact path="/" component={Landing} />
 					<Route exact path="/About" component={About} />
 					<Route exact path="/Projects" component={Projects} />
 					<Route exact path="/Services" component={Services} />
 				</Switch>
-			</div>
-			<div className="circle circle-one"></div>
-			<div className="circle circle-two"></div>
-			<div className="circle circle-three"></div>
-		</div>
+		</>
 	);
 }
 

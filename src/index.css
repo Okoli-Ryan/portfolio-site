@@ -15,12 +15,32 @@ code {
 body,
 html {
 	/* overflow: hidden; */
-  min-height: 100%;
-  background: #4571d6;
+  height: 100%;
 
 }
 
 * {
 	box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'league Spartan';
+    src: url("./fonts/LeagueSpartan-Bold.otf") format("truetype");
+}
+
+h1, h3{
+	margin: 0
+}
+
+button{
+	background: none;
+    border: none;
+    outline: none;
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+
+button:hover{
+	background-color: rgb(99, 99, 99);
 	color: white;
 }
