@@ -1,26 +1,28 @@
 import React from 'react';
-// import { motion } from 'framer-motion';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
-
 import Landing from './routes/Landing';
 import About from './routes/About';
 import Projects from './routes/Projects';
 import Services from './routes/Services';
 
 function App() {
+	const loc = useLocation();
+
 	return (
-		<BrowserRouter>
+		<>
 			<Header />
-			
-				<Switch>
+			<AnimatePresence>
+				<Switch location={loc} key={loc.key}>
 					<Route exact path="/" component={Landing} />
 					<Route exact path="/About" component={About} />
 					<Route exact path="/Projects" component={Projects} />
 					<Route exact path="/Services" component={Services} />
 				</Switch>
-		</BrowserRouter>
+			</AnimatePresence>
+		</>
 	);
 }
 
