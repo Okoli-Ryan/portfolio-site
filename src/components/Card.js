@@ -7,16 +7,16 @@ export default function Card({ title, body, gitLink, siteLink, disabled }) {
 	const options = useRef(0)
 
 	const goToCode = () => {
-		window.location.href = gitLink
+		window.open(gitLink, '_blank')
 	}
 
 	const goToSite = () => {
-		window.location.href = siteLink
+		window.open(siteLink, '_blank')
 	}
 
 	return (
 		<>
-			<div className="card" tabIndex={0} onFocus={() => setDisplay(true)} onBlur={() => setDisplay(false)}>
+			<div className="card cursor" tabIndex={0} onFocus={() => setDisplay(true)} onBlur={() => setDisplay(false)}>
 				<div className="card-body">
 					<img src={body} alt="" />
 				</div>

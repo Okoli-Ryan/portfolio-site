@@ -33,11 +33,11 @@ export default function Header() {
 	};
 
 	const goToGithub = () => {
-		window.location.href = 'https://github.com/Okoli-Ryan';
+		window.open('https://github.com/Okoli-Ryan', '_blank')
 	};
 
 	const goToLinkedin = () => {
-		window.location.href = 'https://linkedin.com/in/okoliugo';
+		window.open('https://linkedin.com/in/okoliugo', '_blank');
 	};
 
 	const copyNumber = () => {
@@ -51,12 +51,12 @@ export default function Header() {
 		<>
 			<div className="header">
 				<div className="logo">
-					<div className="logocover" onClick={homePage}>
+					<div className="logocover cursor" onClick={homePage}>
 						OU
 					</div>
 				</div>
 				<div className="menu">
-					<img src={hamburger} alt="" onClick={() => setDisplay(true)} />
+					<img src={hamburger} alt="" onClick={() => setDisplay(true)} className="cursor"/>
 					<button
 						style={{ color: location.pathname.includes('project') ? '#4f99b2' : null }}
 						className="menu-item-desktop"
@@ -88,13 +88,13 @@ export default function Header() {
 						<div className="cancel" onClick={() => setDisplay(false)}>
 							<motion.img src={Cancel} alt="" animate="rotate" exit="out" variants={spinVariant}/>
 						</div>
-						<div className="menu-item" onClick={homePage}>
+						<div className="menu-item cursor" onClick={homePage}>
 							Home
 						</div>
-						<div className="menu-item" onClick={servicesPage}>
+						<div className="menu-item cursor" onClick={servicesPage}>
 							Services
 						</div>
-						<div className="menu-item" onClick={projectsPage}>
+						<div className="menu-item cursor" onClick={projectsPage}>
 							Projects
 						</div>
 						<div className="contact-container">
@@ -102,9 +102,9 @@ export default function Header() {
 								tabIndex={0}
 								onFocus={copyNumber}
 								onBlur={() => setShowNo(false)}
-								className="contact-option whatsapp"
+								className="contact-option whatsapp cursor"
 							>
-								<img src={Whatsapp} onClick={copyNumber} alt="" />
+								<img src={Whatsapp} onClick={copyNumber} alt=""/>
 								<input
 									style={{ display: showNo ? 'block' : 'none' }}
 									width="30"
@@ -114,13 +114,13 @@ export default function Header() {
 									value="+2349082231742"
 								/>
 							</div>
-							<div className="contact-option" onClick={goToGithub}>
+							<div className="contact-option cursor" onClick={goToGithub}>
 								<img src={Github} alt="" />
 							</div>
-							<div className="contact-option">
+							<div className="contact-option cursor">
 								<img src={Email} alt="" />
 							</div>
-							<div className="contact-option" onClick={goToLinkedin}>
+							<div className="contact-option cursor" onClick={goToLinkedin}>
 								<img src={LinkedIn} alt="" />
 							</div>
 						</div>
