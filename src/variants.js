@@ -12,7 +12,7 @@ export const delayVariant = {
         opacity: 0
     },
     transition: {
-        duration: .3,
+        duration: .2,
         type: 'spring', stiffness: 5
     }
 }
