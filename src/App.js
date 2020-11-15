@@ -3,8 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
-import Landing from './routes/Landing';
-import About from './routes/About';
+import Hero from './routes/Hero'
 import Projects from './routes/Projects';
 import Services from './routes/Services';
 
@@ -14,12 +13,12 @@ function App() {
 	return (
 		<>
 			<Header />
-			<AnimatePresence>
+			<AnimatePresence exitBeforeEnter>
 				<Switch location={loc} key={loc.key}>
-					<Route exact path="/" component={Landing} />
-					<Route exact path="/About" component={About} />
-					<Route exact path="/Projects" component={Projects} />
-					<Route exact path="/Services" component={Services} />
+					{/* <Route path="/About" component={About} /> */}
+					<Route path="/Projects" component={Projects} />
+					<Route path="/Services" component={Services} />
+					<Route path="/" component={Hero} />
 				</Switch>
 			</AnimatePresence>
 		</>

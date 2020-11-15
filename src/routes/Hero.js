@@ -5,7 +5,7 @@ import Github from '../images/github-blue.svg'
 import Whatsapp from '../images/whatsapp-blue.svg'
 import LinkedIn from '../images/linkedin-blue.svg'
 import Email from '../images/email-blue.svg'
-import { LandingVariants, opacityVariant } from '../variants'
+import { delayVariant } from '../variants'
 
 export default function Hero() {
 	const [showNo, setShowNo] = useState(false)
@@ -29,14 +29,14 @@ export default function Hero() {
 	}
 
     return (
-        <div className="hero-image">
+        <motion.div initial="initial" animate="enter" exit="exit" variants={delayVariant} className="hero-image">
             <div className="hero-container">
-                <motion.h1 initial="initial" animate="in" exit="out" variants={LandingVariants} transition={{ duration: .8}} >Okoli Ugochukwu</motion.h1>
-                <motion.h3 initial="out" animate="in" exit="initial" variants={LandingVariants}>Frontend Engineer and UI/UX Designer</motion.h3>
+                <h1>Okoli Ugochukwu</h1>
+                <h3>Frontend Engineer and UI/UX Designer</h3>
             </div>
-            <motion.button initial="initial" animate="in" variants={opacityVariant} className="see-more">
+            <button className="see-more">
                 See more
-            </motion.button>
+            </button>
             <div className="contact-container">
 					<button tabIndex={0} onFocus={copyNumber} onBlur={() => setShowNo(false)} className="contact-option whatsapp">
 						<img src={Whatsapp} onClick={copyNumber} alt="" />
@@ -52,6 +52,6 @@ export default function Hero() {
 						<img src={LinkedIn} alt="" />
 					</button>
 				</div>
-        </div>
+        </motion.div>
     )
 }

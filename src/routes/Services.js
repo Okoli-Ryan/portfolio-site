@@ -10,10 +10,12 @@ import Firebase from '../images/firebase-vector-logo-025F043574-seeklogo.com/fir
 import ReactLogo from '../images/react-vector-logo-C1B79914E9-seeklogo.com/react-seeklogo.com.svg';
 import ReduxLogo from '../images/redux-vector-logo-677C048347-seeklogo.com/redux-seeklogo.com.svg';
 import Git from '../images/git-vector-logo-B46831874B-seeklogo.com/git-seeklogo.com.svg';
+import { delayVariant } from '../variants'
+import { motion } from 'framer-motion'
 
 export default function Services() {
 	return (
-		<>
+		<motion.div variants={delayVariant} exit="exit" initial="initial" animate="enter" transition="transition">
 			<div className="cont" style={{ height: '10%' }}></div>
 			<div className="services-container">
 				<div className="topic">App Development</div>
@@ -39,6 +41,6 @@ export default function Services() {
 					<Card title="Git" body={Git} disabled={true}/>
 				</div>
 			</div>
-		</>
+		</motion.div>
 	);
 }

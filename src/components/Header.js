@@ -7,6 +7,8 @@ import Github from '../images/github.svg';
 import LinkedIn from '../images/linkedin.svg';
 import Whatsapp from '../images/whatsapp.svg';
 import Cancel from '../images/cancel.svg';
+import { motion, AnimatePresence } from 'framer-motion';
+import { spinVariant, delayVariant } from '../variants';
 
 export default function Header() {
 	const history = useHistory();
@@ -31,11 +33,11 @@ export default function Header() {
 	};
 
 	const goToGithub = () => {
-		window.location.href = 'github.com/Okoli-Ryan';
+		window.location.href = 'https://github.com/Okoli-Ryan';
 	};
 
 	const goToLinkedin = () => {
-		window.location.href = 'www.linkedin.com/in/okoliugo';
+		window.location.href = 'https://linkedin.com/in/okoliugo';
 	};
 
 	const copyNumber = () => {
@@ -59,6 +61,7 @@ export default function Header() {
 						style={{ color: location.pathname.includes('project') ? '#4f99b2' : null }}
 						className="menu-item-desktop"
 						onClick={projectsPage}
+						// onClick={projectsPage}
 					>
 						Projects
 					</button>
@@ -66,52 +69,64 @@ export default function Header() {
 						style={{ color: location.pathname.includes('service') ? '#4f99b2' : null }}
 						className="menu-item-desktop"
 						onClick={servicesPage}
+						// onClick={servicesPage}
 					>
 						Services
 					</button>
 				</div>
 			</div>
-			<div className="menubar-container" style={{ left: display ? '0' : '100vw' }}>
-				<div className="cancel" onClick={() => setDisplay(false)}>
-					<img src={Cancel} alt="" />
-				</div>
-				<div className="menu-item" onClick={homePage}>
-					Home
-				</div>
-				<div className="menu-item" onClick={servicesPage}>
-					Services
-				</div>
-				<div className="menu-item" onClick={projectsPage}>
-					Projects
-				</div>
-				<div className="contact-container">
-					<div
-						tabIndex={0}
-						onFocus={copyNumber}
-						onBlur={() => setShowNo(false)}
-						className="contact-option whatsapp"
+			<AnimatePresence exitBeforeEnter>
+				{display && (
+					<motion.div
+						className="menubar-container"
+						variants={delayVariant}
+						initial="initial"
+						exit="initial"
+						animate="enter"
+						transition="transition"
 					>
-						<img src={Whatsapp} onClick={copyNumber} alt="" />
-						<input
-							style={{ display: showNo ? 'block' : 'none' }}
-							width="30"
-							readOnly
-							ref={number}
-							className="whatsapp-no"
-							value="+2349082231742"
-						/>
-					</div>
-					<div className="contact-option" onClick={goToGithub}>
-						<img src={Github} alt="" />
-					</div>
-					<div className="contact-option">
-						<img src={Email} alt="" />
-					</div>
-					<div className="contact-option" onClick={goToLinkedin}>
-						<img src={LinkedIn} alt="" />
-					</div>
-				</div>
-			</div>
+						<div className="cancel" onClick={() => setDisplay(false)}>
+							<motion.img src={Cancel} alt="" animate="rotate" exit="out" variants={spinVariant}/>
+						</div>
+						<div className="menu-item" onClick={homePage}>
+							Home
+						</div>
+						<div className="menu-item" onClick={servicesPage}>
+							Services
+						</div>
+						<div className="menu-item" onClick={projectsPage}>
+							Projects
+						</div>
+						<div className="contact-container">
+							<div
+								tabIndex={0}
+								onFocus={copyNumber}
+								onBlur={() => setShowNo(false)}
+								className="contact-option whatsapp"
+							>
+								<img src={Whatsapp} onClick={copyNumber} alt="" />
+								<input
+									style={{ display: showNo ? 'block' : 'none' }}
+									width="30"
+									readOnly
+									ref={number}
+									className="whatsapp-no"
+									value="+2349082231742"
+								/>
+							</div>
+							<div className="contact-option" onClick={goToGithub}>
+								<img src={Github} alt="" />
+							</div>
+							<div className="contact-option">
+								<img src={Email} alt="" />
+							</div>
+							<div className="contact-option" onClick={goToLinkedin}>
+								<img src={LinkedIn} alt="" />
+							</div>
+						</div>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</>
 	);
 }

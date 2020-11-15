@@ -7,10 +7,12 @@ import Weather from '../images/weather.svg'
 import Clock from '../images/clock.svg'
 import Airplane from '../images/airplane.svg'
 import Result from '../images/result.svg'
+import { motion } from 'framer-motion'
+import { delayVariant } from '../variants'
 
 export default function Projects() {
 	return (
-		<>
+		<motion.div variants={delayVariant} exit="exit" initial="initial" animate="enter" transition="transition">
 			<div className="cont" style={{ height: '4.5rem' }}></div>
 			<div className="services-container">
 				<div className="topic">React Projects</div>
@@ -27,6 +29,6 @@ export default function Projects() {
                     <Card title="Waec Result Checker" body={Result} gitLink="https://github.com/Okoli-Ryan/Waec-Demo" siteLink="https://waec-result-checker.netlify.app" disabled={false}/>
                 </div>
 			</div>
-		</>
+		</motion.div>
 	);
 }

@@ -1,24 +1,33 @@
-export const LandingVariants = {
+export const delayVariant = {
     initial: {
-        x: '-100vw'
-    },
-    in: {
-        x: 0
-    },
-    out: {
-        x: '100vw'
-    }
-}
-
-export const opacityVariant = {
-    initial: {
+        x: '100vw',
         opacity: 0
     },
-    in: {
+    enter: {
+        x: 0,
         opacity: 1
+    },
+    exit: {
+        x: '-100vw',
+        opacity: 0
+    },
+    transition: {
+        duration: .3,
+        type: 'spring', stiffness: 5
     }
 }
 
-// export const RightVariants = {
-
-// }
+export const spinVariant = {
+   rotate: {
+       rotate: 720,
+       transition: {
+           duration: .3,
+       }
+   },
+   out: {
+    rotate: 720,
+    transition: {
+        duration: .3,
+    }
+   }
+}

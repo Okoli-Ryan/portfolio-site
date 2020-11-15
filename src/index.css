@@ -14,7 +14,7 @@ code {
 #root,
 body,
 html {
-	/* overflow: hidden; */
+	overflow-x: hidden;
   height: 100%;
 
 }
