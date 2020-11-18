@@ -56,7 +56,12 @@ export default function Hero() {
 					close to this caption ( just ignore how funny I look :D). I've been coding for close to a
 					decade, moving from language to language before getting into web and app development in
 					2019. If you're interested and want to discuss about my work, please head over to the{' '}
-					<Link to="/contact">Contact Page</Link>
+					<Link to="/contact">Contact Page</Link> or check out <a
+						href="https://github.com/Okoli-Ryan/My-Resume-/blob/master/Ugo's%20Resume.pdf"
+						target="_blank"
+					>
+						my Resume
+					</a>
 				</div>
 			</motion.div>
 		</>

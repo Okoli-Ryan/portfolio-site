@@ -78,7 +78,7 @@ export default function Header() {
 						transition="transition"
 					>
 						<div className="cancel" onClick={() => setDisplay(false)}>
-							<motion.img src={Cancel} alt="" animate="rotate" exit="out" variants={spinVariant}/>
+				<motion.img className="cursor" src={Cancel} alt="" animate="rotate" exit="out" variants={spinVariant}/>
 						</div>
 						<div className="menu-item cursor" onClick={homePage}>
 							Home
