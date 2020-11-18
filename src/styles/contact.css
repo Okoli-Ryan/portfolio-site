@@ -18,7 +18,7 @@
 	height: 100%;
 	padding: 1rem;
 	position: relative;
-	top: -4rem;
+	/* top: -4rem; */
 }
 
 .contactpage-left > h2 {
@@ -90,12 +90,44 @@ form label{
     font-size: .9rem;
 }
 
+.other-contacts{
+	display: flex;
+	flex-direction: column;
+	width: max-content;
+	margin-left: 0;
+}
+
+.tab{
+	padding: .4rem .6rem;
+	display: flex;
+	align-items: center;
+	border: 1px solid #4f99b2;
+	margin: .5rem 0;
+}
+
+.tab img{
+	height: 2rem;
+	width: 2rem;
+
+}
+
+.tab span{
+	font-size: 1rem;
+	font-weight: 600;
+	padding-left: 1rem;
+}
+
+.tab:focus{
+	background-color: rgb(61, 61, 61);
+}
+
 @media only screen and (max-width: 768px) {
 	.contactpage-left {
 		/* display: none; */
 		width: 100%;
 		top: 0;
 		text-align: center;
+		padding: 0
     }
     
     .contactpage-right{
@@ -105,5 +137,9 @@ form label{
 	
 	.contactpage-container{
 		flex-direction: column;
+	}
+
+	.other-contacts{
+		margin: 0 auto;
 	}
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Card from '../components/Card';
 import Message from '../images/message.svg'
 import Todo from '../images/todoList.svg'
@@ -12,9 +12,16 @@ import { delayVariant } from '../variants'
 
 export default function Projects() {
 
+	const cont = useRef(0)
+		
+		useEffect(() => {
+			cont.current.scrollIntoView()
+			
+		}, [])
+
 	return (
 		<motion.div className="scroll" variants={delayVariant} exit="exit" initial="initial" animate="enter" transition="transition">
-			<div className="cont" style={{ height: '4.5rem' }}></div>
+			<div className="cont" ref={cont} style={{ height: '4.5rem' }}></div>
 			<div className="services-container">
 				<div className="topic">React Projects</div>
 				<div className="card-container">

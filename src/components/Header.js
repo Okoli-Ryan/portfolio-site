@@ -1,11 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import '../styles/header.css';
 import hamburger from '../images/menu.svg';
-import Email from '../images/email.svg';
-import Github from '../images/github.svg';
-import LinkedIn from '../images/linkedin.svg';
-import Whatsapp from '../images/whatsapp.svg';
 import Cancel from '../images/cancel.svg';
 import { motion, AnimatePresence } from 'framer-motion';
 import { spinVariant, delayVariant } from '../variants';
@@ -13,9 +9,7 @@ import { spinVariant, delayVariant } from '../variants';
 export default function Header() {
 	const history = useHistory();
 	const location = useLocation();
-	const number = useRef(0);
 	const [display, setDisplay] = useState(false);
-	const [showNo, setShowNo] = useState(false);
 
 	const homePage = () => {
 		setDisplay(false);
@@ -35,21 +29,6 @@ export default function Header() {
 	const contactPage = () => {
 		setDisplay(false);
 		history.push('/contact');
-	};
-
-	const goToGithub = () => {
-		window.open('https://github.com/Okoli-Ryan', '_blank')
-	};
-
-	const goToLinkedin = () => {
-		window.open('https://linkedin.com/in/okoliugo', '_blank');
-	};
-
-	const copyNumber = () => {
-		setShowNo(true);
-		number.current.select();
-		document.execCommand('copy');
-		alert('number copied to clipboard');
 	};
 
 	return (
@@ -113,33 +92,7 @@ export default function Header() {
 						<div className="menu-item cursor" onClick={contactPage}>
 							Contact
 						</div>
-						<div className="contact-container">
-							<div
-								tabIndex={0}
-								onFocus={copyNumber}
-								onBlur={() => setShowNo(false)}
-								className="contact-option whatsapp cursor"
-							>
-								<img src={Whatsapp} onClick={copyNumber} alt=""/>
-								<input
-									style={{ display: showNo ? 'block' : 'none' }}
-									width="30"
-									readOnly
-									ref={number}
-									className="whatsapp-no"
-									value="+2349082231742"
-								/>
-							</div>
-							<div className="contact-option cursor" onClick={goToGithub}>
-								<img src={Github} alt="" />
-							</div>
-							<div className="contact-option cursor">
-								<img src={Email} alt="" />
-							</div>
-							<div className="contact-option cursor" onClick={goToLinkedin}>
-								<img src={LinkedIn} alt="" />
-							</div>
-						</div>
+						
 					</motion.div>
 				)}
 			</AnimatePresence>
