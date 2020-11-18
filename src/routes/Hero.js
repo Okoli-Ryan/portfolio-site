@@ -30,6 +30,7 @@ export default function Hero() {
 
     return (
         <motion.div initial="initial" animate="enter" exit="exit" variants={delayVariant} className="hero-image">
+			<div className="cont" style={{height: '4.5rem'}}></div>
             <div className="hero-container">
                 <h1>Okoli Ugochukwu</h1>
                 <h3>Frontend Engineer and UI/UX Designer</h3>

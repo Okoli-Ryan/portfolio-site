@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Card from '../components/Card';
 import '../styles/services.css';
 import '../styles/hero.css';
@@ -14,9 +14,10 @@ import { delayVariant } from '../variants'
 import { motion } from 'framer-motion'
 
 export default function Services() {
+
 	return (
 		<motion.div variants={delayVariant} exit="exit" initial="initial" animate="enter" transition="transition">
-			<div className="cont" style={{ height: '10%' }}></div>
+			<div className="cont" style={{ height: '4.5rem' }}></div>
 			<div className="services-container">
 				<div className="topic">App Development</div>
 				<div className="card-container">

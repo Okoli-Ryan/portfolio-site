@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Hero from './routes/Hero'
 import Projects from './routes/Projects';
 import Services from './routes/Services';
+import Contact from './routes/Contact'
 
 function App() {
 	const loc = useLocation();
@@ -15,7 +16,7 @@ function App() {
 			<Header />
 			<AnimatePresence exitBeforeEnter>
 				<Switch location={loc} key={loc.key}>
-					{/* <Route path="/About" component={About} /> */}
+					<Route path="/Contact" component={Contact} />
 					<Route path="/Projects" component={Projects} />
 					<Route path="/Services" component={Services} />
 					<Route path="/" component={Hero} />

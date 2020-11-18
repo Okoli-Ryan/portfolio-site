@@ -2,7 +2,7 @@
 	width: 100%;
 
 	/* background-position-y: 85%; */
-	height: 100%;
+	height: calc(100%);
 	display: flex;
 	justify-content: center;
 	align-items: center;

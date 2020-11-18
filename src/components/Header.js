@@ -32,6 +32,11 @@ export default function Header() {
 		history.push('/projects');
 	};
 
+	const contactPage = () => {
+		setDisplay(false);
+		history.push('/contact');
+	};
+
 	const goToGithub = () => {
 		window.open('https://github.com/Okoli-Ryan', '_blank')
 	};
@@ -73,6 +78,14 @@ export default function Header() {
 					>
 						Services
 					</button>
+					<button
+						style={{ color: location.pathname.includes('contact') ? '#4f99b2' : null }}
+						className="menu-item-desktop"
+						onClick={contactPage}
+						// onClick={servicesPage}
+					>
+						Contact
+					</button>
 				</div>
 			</div>
 			<AnimatePresence exitBeforeEnter>
@@ -96,6 +109,9 @@ export default function Header() {
 						</div>
 						<div className="menu-item cursor" onClick={projectsPage}>
 							Projects
+						</div>
+						<div className="menu-item cursor" onClick={contactPage}>
+							Contact
 						</div>
 						<div className="contact-container">
 							<div
