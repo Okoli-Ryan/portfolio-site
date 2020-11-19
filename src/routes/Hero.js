@@ -59,6 +59,7 @@ export default function Hero() {
 					<Link to="/contact">Contact Page</Link> or check out <a
 						href="https://github.com/Okoli-Ryan/My-Resume-/blob/master/Ugo's%20Resume.pdf"
 						target="_blank"
+						rel="noopener noreferrer"
 					>
 						my Resume
 					</a>
