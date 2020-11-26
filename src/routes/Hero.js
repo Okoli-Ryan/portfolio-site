@@ -2,11 +2,11 @@ import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../styles/hero.css';
-
 import { delayVariant } from '../variants';
 import myPic2 from '../images/my Pic.jpg';
 
 export default function Hero() {
+
 	const about = useRef(0);
 
 	const cont = useRef(0);
