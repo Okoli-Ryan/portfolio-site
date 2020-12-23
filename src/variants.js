@@ -1,21 +1,22 @@
 export const delayVariant = {
-    initial: {
-        x: '100vw',
-        opacity: 0
-    },
-    enter: {
-        x: 0,
-        opacity: 1
-    },
-    exit: {
-        x: '-100vw',
-        opacity: 0
-    },
-    transition: {
-        duration: .2,
-        type: 'spring', stiffness: 5
-    }
-}
+  initial: {
+    x: "100vw",
+    opacity: 0,
+  },
+  enter: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: {
+    x: "-100vw",
+    opacity: 0,
+  },
+  transition: {
+    duration: 0.2,
+    type: "spring",
+    stiffness: 5,
+  },
+};
 
 export const spinVariant = {
    rotate: {
