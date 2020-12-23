@@ -1,5 +1,6 @@
 export const delayVariant = {
   initial: {
+    x: "100vw",
     opacity: 0,
   },
   enter: {
